@@ -12,78 +12,91 @@ Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\Advertis
 *** Test Cases ***
 
 verify that the valid keyword is entered in the keyword field
-    [Tags]    valid_keyword_search
-    LoginResource.click the login button
-    LoginResource.Fill the Login page
-    HomeResource.Click on the MarketPlace button
-    AdvertisementResource.verify that the markerplace is open
-    AdvertisementResource.Click on the advertisement page button
-    #AdvertisementResource.Enter the valid Keyword in the keyword box
-    #AdvertisementResource.verify the keyword based image displayed
-    AdvertisementResource.Number of product displayed
-
-verify that the Invalid keyword is entered in the keyword field
-    [Tags]    Invalid_keyword_search
+    [Tags]    Smoke
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the MarketPlace button
     AdvertisementResource.verify that the markerplace is open
     AdvertisementResource.Click on the advertisement page button
     Sleep    5
+    AdvertisementResource.Enter the valid Keyword in the keyword box
+    AdvertisementResource.verify the keyword based items displayed
+
+verify that the Invalid keyword is entered in the keyword field
+    [Tags]    Retest    invalid
+    LoginResource.click the login button
+    LoginResource.Fill the Login page
+    HomeResource.Click on the MarketPlace button
+    AdvertisementResource.verify that the markerplace is open
+    AdvertisementResource.Click on the advertisement page button
     AdvertisementResource.Enter the invalid Keyword in the keyword box
-    AdvertisementResource.verify the invalid keyword message is displayed
+    #AdvertisementResource.verify the invalid keyword error message is displayed
+
 
 
 Verify the advertisements functionality with dropdownlist order by Relevance
-    [Tags]    Relevance
+    [Tags]    Smoke
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the MarketPlace button
     AdvertisementResource.verify that the markerplace is open
-
     AdvertisementResource.Click on the advertisement page button
-    Sleep    5
-    AdvertisementResource.Enter the valid Keyword in the keyword box
+    AdvertisementResource.Click the show advertisement button
     AdvertisementResource.Click on the dropdown button Order by
     AdvertisementResource.Select the option relevance
+    AdvertisementResource.verify relevance option
 
 
 Verify the advertisements functionality with dropdownlist order by last published
-    [Tags]    last_published
+    [Tags]     Smoke
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the MarketPlace button
     AdvertisementResource.verify that the markerplace is open
     AdvertisementResource.Click on the advertisement page button
-    AdvertisementResource.Enter the valid Keyword in the keyword box
+    AdvertisementResource.Click the show advertisement button
     AdvertisementResource.Click on the dropdown button Order by
     AdvertisementResource.Select the option last published
+    AdvertisementResource.verify relevance option
+
 
 
 Verify the advertisements functionality with dropdownlist order by lowest
-    [Tags]    lowest_price
+    [Tags]    Smoke
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the MarketPlace button
     AdvertisementResource.verify that the markerplace is open
     AdvertisementResource.Click on the advertisement page button
-    AdvertisementResource.Enter the valid Keyword in the keyword box
+    AdvertisementResource.Click the show advertisement button
     AdvertisementResource.Click on the dropdown button Order by
     AdvertisementResource.Select the option lowest price
+    AdvertisementResource.verify the lowest price
+
 
 
 Verify the advertisements functionality with dropdownlist order by Highest
-    [Tags]    Highest_price
+    [Tags]    Smoke
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the MarketPlace button
     AdvertisementResource.verify that the markerplace is open
     AdvertisementResource.Click on the advertisement page button
-    AdvertisementResource.Enter the valid Keyword in the keyword box
+    AdvertisementResource.Click the show advertisement button
     AdvertisementResource.Click on the dropdown button Order by
     AdvertisementResource.Select the option highest price
+    AdvertisementResource.verify the highest price
 
 
 
+verify the wishlist functionality
+    [Tags]    Regression
+    LoginResource.click the login button
+    LoginResource.Fill the Login page
+    HomeResource.Click on the MarketPlace button
+    AdvertisementResource.Click on the advertisement page button
+    AdvertisementResource.Select the favourite only checkbox
+    AdvertisementResource.verify the favourite list contains favorite item
 
 
+    

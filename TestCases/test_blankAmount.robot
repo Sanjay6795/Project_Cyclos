@@ -9,29 +9,29 @@ Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\HomeReso
 Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\PaymentUser.robot
 Library    DataDriver    file=../TestData/payment_to_user_testdata.xlsx    sheet_name=Sheet1
 
-Test Template    To validate payment to user functionality with valid amount
- 
+Test Template    To validate payment to user functionality with amount field is given blank 
+
 
 *** Test Cases ***
 To validate payment    ${user_name}    ${amount_data} 
-    
+
 
 *** Keywords ***
-To validate payment to user functionality with valid amount 
-    
-    [Tags]    Smoke
-    [Arguments]    ${user_name}    ${amount_data}
+
+
+To validate payment to user functionality with amount field is given blank 
+    [Documentation]    verify the amount field is given blank
+    [Tags]    Retest
+    [Arguments]    ${user_name}
     LoginResource.click the login button
     LoginResource.Fill the Login page
     HomeResource.Click on the Banking button
     PaymentUser.verify the Banking page open
     PaymentUser.Select the option payment to user
     PaymentUser.verify the payment to user page open
-    PaymentUser.Enter the username in the to user field   ${user_name}
+    PaymentUser.Enter the username in the to user field    ${user_name}
     PaymentUser.Select the user
-    PaymentUser.Enter the valid amount in the amount field     ${amount_data}
-    PaymentUser.Click the scheduling dropdown button
-    PaymentUser.Click the pay now option
     PaymentUser.Click the next Button in payment page
-    PaymentUser.Click the confirm button in the payment page
-    PaymentUser.verify the succesfull payment notification
+    PaymentUser.verify the error message for amount field is given blank
+
+
