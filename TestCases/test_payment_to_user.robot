@@ -3,14 +3,18 @@ Documentation    To validate Banking - payment to user Functionality
 Library    SeleniumLibrary
 Test Setup    Open the Browser with URL
 Test Teardown    close Browser session
-Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\GenericResource.robot
-Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\LoginResource.robot
-Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\HomeResource.robot
-Resource    C:\\Cyclos_project\\PilotProject_Cyclos_Team1-2\\Resources\\PaymentUser.robot
+Resource    ../Resources/GenericResource.robot
+Resource   ../Resources/LoginResource.robot
+Resource   ../Resources/HomeResource.robot
+Resource    ../Resources/PaymentUser.robot
 Library    DataDriver    file=../TestData/payment_to_user_testdata.xlsx    sheet_name=Sheet1
 
 Test Template    To validate payment to user functionality with valid amount
  
+
+*** Variables ***
+${amount_data}
+
 
 *** Test Cases ***
 To validate payment    ${user_name}    ${amount_data} 
@@ -21,8 +25,9 @@ To validate payment to user functionality with valid amount
     
     [Tags]    Smoke
     [Arguments]    ${user_name}    ${amount_data}
+    HomeResource.Go to Login Page
+    LoginResource.Fill the login form    Sanjay_stark    Sanjay
     LoginResource.click the login button
-    LoginResource.Fill the Login page
     HomeResource.Click on the Banking button
     PaymentUser.verify the Banking page open
     PaymentUser.Select the option payment to user
@@ -35,3 +40,7 @@ To validate payment to user functionality with valid amount
     PaymentUser.Click the next Button in payment page
     PaymentUser.Click the confirm button in the payment page
     PaymentUser.verify the succesfull payment notification
+
+
+
+
