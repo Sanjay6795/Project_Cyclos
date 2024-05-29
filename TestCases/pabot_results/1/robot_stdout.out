@@ -1,9 +1,31 @@
 ==============================================================================
-Test Advertisement :: To validate Advertisement Functionality                 
+TestCases                                                                     
 ==============================================================================
-verify that the Invalid keyword is entered in the keyword field       | PASS |
+TestCases.Test Pay User Invalid :: To validate Banking - payment to user Fu...
+==============================================================================
+To validate payment                                                     
+  Traceback (most recent call last):
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Cyclos_project\PilotProject_Cyclos_Team1-3\TestCases\test_pay_user_invalid.robot:17
+    T:  To validate payment    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Cyclos_project\PilotProject_Cyclos_Team1-3\TestCases\test_pay_user_invalid.robot:21
+      To validate payment to user functionality with invalid amount    user_name=Dinesh dk    exceeded_amount_data=501
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Cyclos_project\PilotProject_Cyclos_Team1-3\TestCases\test_pay_user_invalid.robot:28
+      verify the Banking page open    
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    File  C:\Cyclos_project\PilotProject_Cyclos_Team1-3\Resources\PaymentUser.robot:39
+      Wait Until Element Is Visible    ${Banking_title}
+      |  ${Banking_title} = xpath://div[@class="side-menu-header"]//following-sibling::div (str)
+______________________________________________________________________________
+| FAIL |
+Element 'xpath://div[@class="side-menu-header"]//following-sibling::div' not visible after 5 seconds.
 ------------------------------------------------------------------------------
-Test Advertisement :: To validate Advertisement Functionality         | PASS |
-1 test, 1 passed, 0 failed
+TestCases.Test Pay User Invalid :: To validate Banking - payment t... | FAIL |
+1 test, 0 passed, 1 failed
+==============================================================================
+TestCases                                                             | FAIL |
+1 test, 0 passed, 1 failed
 ==============================================================================
 Output:  C:\Cyclos_project\PilotProject_Cyclos_Team1-3\TestCases\pabot_results\1\output.xml

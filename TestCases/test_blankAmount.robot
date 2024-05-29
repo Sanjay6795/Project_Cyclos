@@ -20,6 +20,7 @@ To validate payment    ${user_name}    ${amount_data}
 
 
 To validate payment to user functionality with amount field is given blank 
+    [Documentation]    To validate payment by giving blank in amount field 
     [Tags]    Retest
     [Arguments]    ${user_name}
     HomeResource.Go to Login Page

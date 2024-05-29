@@ -20,6 +20,7 @@ To validate payment    ${user_name}    ${amount_data}
 *** Keywords ***
 
 To validate payment to user functionality with user to field is given blank 
+    [Documentation]    To validate payment with blank userfields
     [Tags]    Smoke
     [Arguments]    ${amount_data}
     HomeResource.Go to Login Page

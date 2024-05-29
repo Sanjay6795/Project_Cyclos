@@ -19,6 +19,7 @@ To validate payment    ${user_name}    ${exceeded_amount_data}
 *** Keywords ***
 
 To validate payment to user functionality with invalid amount
+    [Documentation]    To validate the Exceeded amount is entered
     [Tags]    Smoke
     [Arguments]    ${user_name}    ${exceeded_amount_data}
     HomeResource.Go to Login Page
@@ -31,8 +32,6 @@ To validate payment to user functionality with invalid amount
     PaymentUser.Enter the username in the to user field    ${user_name}
     PaymentUser.Select the user
     PaymentUser.Enter the valid amount in the amount field    ${exceeded_amount_data}
-    #PaymentUser.Click the scheduling dropdown button
-    #PaymentUser.Click the pay now option
-    PaymentUser.Click the next Button in payment page
     Sleep    5
+    PaymentUser.Click the next Button in payment page
     PaymentUser.verify exceeded amount is entered

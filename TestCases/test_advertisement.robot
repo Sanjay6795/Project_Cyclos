@@ -12,7 +12,8 @@ Resource   ../Resources/AdvertisementResource.robot
 *** Test Cases ***
 
 verify that the valid keyword is entered in the keyword field
-    [Tags]    Smoke     valid_keyword
+    [Documentation]    Validate the Advetisment functionality by giving a valid keyword
+    [Tags]    Smoke    
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
     LoginResource.click the login button
@@ -25,6 +26,7 @@ verify that the valid keyword is entered in the keyword field
 
 
 verify that the Invalid keyword is entered in the keyword field
+    [Documentation]    To Validate the advertisement functionality with invalid keyword
     [Tags]    Retest    
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
@@ -38,6 +40,7 @@ verify that the Invalid keyword is entered in the keyword field
 
 
 Verify the advertisements functionality with dropdownlist order by Relevance
+    [Documentation]    To validate the advertisement functionalist with Relevance
     [Tags]    Smoke
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
@@ -51,6 +54,7 @@ Verify the advertisements functionality with dropdownlist order by Relevance
 
 
 Verify the advertisements functionality with dropdownlist order by last published
+    [Documentation]    To validate the advertisement functionalist with last published
     [Tags]     Smoke
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
@@ -65,6 +69,7 @@ Verify the advertisements functionality with dropdownlist order by last publishe
 
 
 Verify the advertisements functionality with dropdownlist order by lowest
+    [Documentation]    To validate the advertisement functionalist with lowest price
     [Tags]    Smoke
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
@@ -79,6 +84,7 @@ Verify the advertisements functionality with dropdownlist order by lowest
 
 
 Verify the advertisements functionality with dropdownlist order by Highest
+    [Documentation]    To validate the advertisement functionalist with Highest price
     [Tags]    Smoke
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
@@ -93,7 +99,8 @@ Verify the advertisements functionality with dropdownlist order by Highest
 
 
 verify the wishlist functionality
-    [Tags]    Regression    wish
+    [Documentation]    To validate the wishlist functionalist
+    [Tags]    Regression    
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
     LoginResource.click the login button

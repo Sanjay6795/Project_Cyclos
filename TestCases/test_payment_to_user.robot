@@ -22,7 +22,7 @@ To validate payment    ${user_name}    ${amount_data}
 
 *** Keywords ***
 To validate payment to user functionality with valid amount 
-    
+    [Documentation]    To validate the successfull payment notification
     [Tags]    Smoke
     [Arguments]    ${user_name}    ${amount_data}
     HomeResource.Go to Login Page

@@ -19,6 +19,7 @@ To validate payment    ${user_name}    ${amount_data}
 *** Keywords ***
 
 To validate the payment to user functionality with Recurring payment
+    [Documentation]    To verify that the successful recurring payment 
     [Tags]    Smoke
     [Arguments]    ${user_name}    ${amount_data}
     HomeResource.Go to Login Page

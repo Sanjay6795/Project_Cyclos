@@ -19,10 +19,13 @@ ${invalid_keyword_message}    xpath://div[text()='Invalid keywords']
 ${no_search_found_error_msg}    xpath://div[@class="page-content card d-flex flex-grow-1 layout-normal last mode-normal"]//div
 ${Advertisement_content}    xpath://div[@class="row category-results"]//div
 ${favourite_item}    xpath://label[@class="custom-control-label"]
+${relevant_results}    xpath://div[@class='row tiled-results']
+${expected_relevant_result}    food
 ${donut}    xpath://div[text()=" Donuts "]
 ${relevance_item}    xpath:(//div[text()=" Orange "])[1]
 ${lowest_price_item}    xpath://div[text()=" Java Development Course "]
 ${highest_price_item}    xpath://div[text()=" test1 "]
+
 *** Keywords ***
 
 
@@ -37,7 +40,6 @@ Verify the Advertisement page
     Element Text Should Be    ${Advertisement_title}    Search advertisements
 
 Enter the valid Keyword in the keyword box
-    #Wait Until Page Contains Element    ${keyword}
     Input Text    ${keyword}    food  
 
 Click the show advertisement button
@@ -56,13 +58,16 @@ verify the invalid keyword error message is displayed
     Element Text Should Be    ${invalid_keyword_message}    Invalid keywords      
 
 verify the no result match message display
-    #Wait Until Element Is Visible    ${no_search_found_error_msg}
     Element Text Should Be    ${no_search_found_error_msg}      No results match the search criteria    
 
-
+verify the relevance result matches
+    ${list_of_elements}=    Get WebElements    ${relevant_results}
+    FOR  ${element}    IN    @{list_of_elements}
+        ${text}=    Get Text    ${element}
+        Should Contain    ${text}    ${expected_relevant_result} 
+    END
 
 Click on the dropdown button Order by
-    #Wait Until Element Is Visible    ${order_By}
     Click Element    ${order_By}
 
 

@@ -13,6 +13,7 @@ Resource    ../Resources/PaymentUser.robot
 *** Test Cases ***
 
 To validate payment to user functionality with blank fields
+    [Documentation]    To validate payment with all the fields are gievn blank 
     [Tags]    Smoke
     HomeResource.Go to Login Page
     LoginResource.Fill the login form    Sanjay_stark    Sanjay
